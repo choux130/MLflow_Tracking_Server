@@ -62,5 +62,5 @@ This project is about how to host MLflow on Azure as a web app and connect Azure
 	mlflow.log_artifact("output.txt")   
     mlflow.end_run()
     ```
-5. Go to the web app and see if the run has been logged and go to blob storage to make sure the artifacts have been saved in the container.
+5. Go to the web app (https://<web-app-name>.azurewebsites.net) and see if the run has been logged and go to blob storage to make sure the artifacts have been saved in the container.
     
