@@ -28,6 +28,7 @@ This project is about how to host MLflow on Azure as a web app and connect Azure
 
 ### Quick Test
 1. Set environment variables, <code>MLFLOW_TRACKING_URI</code> and <code>AZURE_STORAGE_CONNECTION_STRING</code>. 
+
     Linux and MacOS
     ```bash
     export MLFLOW_TRACKING_URI=https://<web-app-name>.azurewebsites.net
