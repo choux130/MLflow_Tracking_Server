@@ -26,7 +26,7 @@ This project is about how to host MLflow on Azure as a web app and connect Azure
 5. Push image to the created Azure Registry. [Push your first image to a private Docker container registry using the Docker CLI](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-docker-cli)
 5. Create "Web App" in Azure using the image in Azure Registry. [Deploying Containerised Apps to Azure Web App for Containers](https://chrissainty.com/containerising-blazor-applications-with-docker-deploying-containerised-apps-to-azure-web-app-for-containers/)
 
-### Quick test
+### Quick Test
 1. Set environment variables, <code>MLFLOW_TRACKING_URI</code> and <code>AZURE_STORAGE_CONNECTION_STRING</code>. 
     Linux and MacOS
     ```bash
@@ -38,13 +38,18 @@ This project is about how to host MLflow on Azure as a web app and connect Azure
     set MLFLOW_TRACKING_URI=https://<web-app-name>.azurewebsites.net
     set AZURE_STORAGE_CONNECTION_STRING='<connection-string>'
     ```
-2. Open Python and make sure the environment variables have been correctly passed. 
+2. Have python package installed.
+   ```bash
+   pip install mlflow==1.7.2
+   pip install azure-storage-blob==2.1.0
+   ```
+3. Open Python and make sure the environment variables have been correctly passed. 
     ```python
     import os 
     print(os.getenv('MLFLOW_TRACKING_URI'))
 	print(os.getenv('AZURE_STORAGE_CONNECTION_STRING'))
     ```
-3. Try to log parameters, metric and artifacts to the tracking server.
+4. Try to log parameters, metric and artifacts to the tracking server.
     ```python
     import mlflow
     
@@ -57,5 +62,5 @@ This project is about how to host MLflow on Azure as a web app and connect Azure
 	mlflow.log_artifact("output.txt")   
     mlflow.end_run()
     ```
-4. Go to the web app and see if the run has been logged and go to blob storage to make sure the artifacts have been saved in the container.
+5. Go to the web app and see if the run has been logged and go to blob storage to make sure the artifacts have been saved in the container.
     
