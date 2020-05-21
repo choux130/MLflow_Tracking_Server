@@ -1,7 +1,7 @@
 # MLflow Tracking Server
 
 ### Key Words
-<code>MLflow</code>, <code>Docker</code>, <code>SSH</code>, <code>Azure Web App</code>, <code>Azure Registry</code>, <code>Auzre Blob Storage</code>, 
+<code>MLflow</code>, <code>Docker</code>, <code>SSH</code>, <code>Azure Web App</code>, <code>Azure Registry</code>, <code>Auzre Blob Storage</code>
 
 ### Reference
 * [Project to deploy MLflow Tracking Server on an Azure Web App for Containers (Linux).](https://github.com/marvinbuss/mlflow-on-azure)
@@ -58,9 +58,8 @@ This project is about how to host MLflow on Azure as a web app and connect Azure
     mlflow.log_param("param1", 500)
     mlflow.log_metric("foo", 100)
  
-    with open("output.txt", "w") as f: 
-        f.write("Hello world!")
-	mlflow.log_artifact("output.txt")   
+    with open("output.txt", "w") as f: f.write("Hello world!")
+    mlflow.log_artifact("output.txt")   
     mlflow.end_run()
     ```
 5. Go to the web app (<code>https://\<web-app-name\>.azurewebsites.net</code>) and see if the run has been logged and go to blob storage to make sure the artifacts have been saved in the container.
