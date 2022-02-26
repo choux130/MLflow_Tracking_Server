@@ -1,2 +1,2 @@
-mlflow==1.7.2
+mlflow==1.23.1
 azure-storage-blob==2.1.0
